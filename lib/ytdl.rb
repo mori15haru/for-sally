@@ -1,8 +1,4 @@
-module Configuration
-  def self.home
-    Dir.home
-  end
-end
+require_relative 'ytdl/configuration.rb'
 
 module Ytdl
   def self.download(urls)
@@ -15,16 +11,12 @@ module Ytdl
 
   private
 
+  # adds the videos to 'path/year-month-date' folder
+  # creates a new folder when it doesn't exist
+  # Ytdl::Configuration.home to set the path
+
   def self.validate_dir
     Dir.mkdir(dir) unless File.exist?(dir)
-  end
-
-  def self.run(url)
-    system(command(url))
-  end
-
-  def self.command(url)
-    "youtube-dl --write-thumbnail -o \'#{dir}/%(title)s.%(ext)s\' #{url}"
   end
 
   def self.dir
@@ -35,6 +27,16 @@ module Ytdl
     Time.now.strftime("%Y%m%d")
   end
 
+  def self.run(url)
+    system(command(url))
+  end
+
+  # downloads using the python youtube-dl
+  def self.command(url)
+    "youtube-dl --write-thumbnail -o \'#{dir}/%(title)s.%(ext)s\' #{url}"
+  end
+
+  # creates a html to list up the titles and thumbnails
   def self.gallery
     File.new(File.join(dir, 'gallery.html'), "a+").tap do |file|
       file << "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"/></head><body>"
@@ -47,35 +49,4 @@ module Ytdl
       file << "<body></html>"
     end
   end
-end
-
-if __FILE__ == $0
-  puts "#{'='*60}"
-
-  def greeting
-    puts '# 1. List up the videos you want to download'
-    print '# : '
-  end
-
-  def prompt
-    '# : '
-  end
-
-  def bye
-    ['', 'bye']
-  end
-
-  urls = [].tap do |urls_array|
-    greeting
-    while url = gets.chomp
-      break if bye.include?(url)
-      urls_array << url
-      print prompt
-    end
-  end
-  puts "# 2. OK. I'll download #{urls.count} videos"
-  Ytdl.download(urls)
-  puts "# 3. Find your videos in #{Ytdl.dir}"
-  puts "#{'='*60}"
-  Ytdl.gallery
 end
