@@ -1,4 +1,4 @@
-**youtube-dl-in-ruby-not-python** for Sally is a script to add a console ui to youtube-dl in Ruby.
+**youtube-dl-in-ruby-not-python** for [Sally](http://line.wikia.com/wiki/Sally) is a script to add a console ui to youtube-dl in Ruby.
 ```
 ~/ytdl-ruby (master) $ ruby youtube-dl-in-ruby-not-python.rb
 ============================================================
