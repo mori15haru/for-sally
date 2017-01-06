@@ -1,10 +1,4 @@
-youtube-dl-in-ruby-not-python for Sally.
-
-1. Set the location to download videos into. (In 'lib/ytdl/configuration.rb'.)
-
-2. From the console, run `ruby youtube-dl-in-ruby-not-python.rb`.
-
-3. Download videos
+**youtube-dl-in-ruby-not-python** for Sally is a script to add a console ui to youtube-dl in Ruby.
 ```
 ~/ytdl-ruby (master) $ ruby youtube-dl-in-ruby-not-python.rb
 ============================================================
@@ -14,22 +8,12 @@ youtube-dl-in-ruby-not-python for Sally.
 # : https://www.youtube.com/watch?###
 # :
 # 2. OK. I'll download 3 videos
-# In progress 1/3
-[youtube] mNkh0KOlHY0: Downloading webpage
-...
-[download] 100% of 7.27MiB in 00:02
-# In progress 2/3
-[youtube] 4QnPNleGIgE: Downloading webpage
-...
-[download] 100% of 54.06MiB in 00:07
-# In progress 3/3
-[youtube] 8y2pFAW6iz8: Downloading webpage
-...
-[download] 100% of 14.72MiB in 00:04
+  ...
 # 3. Find your videos in $YOUR_DIR/$DATE_OF_TODAY
+# 4. Find the list of your videos with thumbnails here $YOUR_DIR/$DATE_OF_TODAY/gallery.html
 ============================================================
 ~/ytdl-ruby (master) $
 ```
-
-4. You'll be able to find the thumbnails here - `$YOUR_DIR/$DATA_OF_TODAY/gallery.html`
-
+1. Set the location to download videos into, in `lib/ytdl/configuration.rb`.
+2. From the terminal, run `ruby youtube-dl-in-ruby-not-python.rb`.
+3. Download videos using the console ui.

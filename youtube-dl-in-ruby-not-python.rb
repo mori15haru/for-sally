@@ -36,6 +36,7 @@ if __FILE__ == $0
 
   # shows the path where you can find the videos
   puts "# 3. Find your videos in #{Ytdl.dir}"
+  puts "# 4. Find the list of your videos with thumbnails here #{Ytdl.dir}/gallery.html"
   puts "#{'='*60}"
 
   # creates a html page to list up the titles and thumbnails
