@@ -14,6 +14,6 @@
 ============================================================
 ~/ytdl-ruby (master) $
 ```
-1. Set the location to download videos into, in `lib/ytdl/configuration.rb`.
+1. Set the location to download videos into, in `lib/ytdl/configuration.rb`, or it'll be $HOME
 2. From the terminal, run `ruby youtube-dl-in-ruby-not-python.rb`.
 3. Download videos using the console ui.
