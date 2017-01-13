@@ -8,7 +8,7 @@
 # : https://www.youtube.com/watch?###
 # :
 # 2. OK. I'll download 3 videos
-  ...
+# ...
 # 3. Find your videos in $YOUR_DIR/$DATE_OF_TODAY
 # 4. Find the list of your videos with thumbnails here $YOUR_DIR/$DATE_OF_TODAY/gallery.html
 ============================================================
